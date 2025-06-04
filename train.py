@@ -1,3 +1,5 @@
+#this is the lastest version of the code
+#this train the model ANND exports it to exported-model-v2
 from tflite_model_maker import object_detector
 from tflite_model_maker.object_detector import DataLoader
 import tensorflow as tf
