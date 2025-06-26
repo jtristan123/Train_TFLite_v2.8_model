@@ -10,10 +10,12 @@ __pycache__/
 
 # Ignore Python venv
 venv/
+tflite-venv/
 .venvpython9/
 images/
 *.env
 exported-model/
+testingstuff/
 
 # Ignore Cocotb-generated .vvp
 *.vvp
@@ -21,3 +23,4 @@ exported-model/
 # Ignore Git-specific backups or temporary edits
 *.swp
 *.bak
+*.deb

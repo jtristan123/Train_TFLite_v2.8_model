@@ -26,8 +26,8 @@ model = object_detector.create(
 )
 
 model.export(
-    export_dir='exported-model2',
+    export_dir='exported-model3',
     export_format=[ExportFormat.TFLITE, ExportFormat.LABEL]
 )
 
-print("✓ Training and export complete. Files saved to ./exported-model2")
+print("✓ Training and export complete. Files saved to ./exported-model3")
