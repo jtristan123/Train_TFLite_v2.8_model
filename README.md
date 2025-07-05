@@ -36,6 +36,16 @@ pip install -r requirements.txt
 python3 train.py
 ```
 Training uses tflite_model_maker and image-label pairs in images/ folder.
+📂 Folder Structure
+```
+├── images/                   # Training images and labels
+├── exported-model-v2/        # Exported and compiled TFLite model
+├── TFLite_detection_webcampi.py  # Main detection + robot control script
+├── train.py                  # Training script
+├── export_tflite_model.py    # Model export script
+├── requirements.txt
+
+```
 
 📦 Model Conversion
 After training, convert your model to TensorFlow Lite:
