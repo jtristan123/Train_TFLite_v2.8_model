@@ -1,38 +1,51 @@
-# Cone Detection with TensorFlow Lite + Coral Edge TPU
+# CCC Cone Detection with Coral Edge TPU
 
-Train and deploy a cone detector using TensorFlow Lite Model Maker and compile it for the Coral Edge TPU.
+This project demonstrates how to train, convert, and deploy a custom object detection model (cone detector) on the Google Coral USB Accelerator using TensorFlow Lite and Edge TPU.
 
-## 📁 Structure
+## 📦 What This Project Does
 
-.
-├── images/ # Training images + Pascal VOC XMLs
-├── train.py # Train and export model
-├── verify_if_int8.py # Check if model is quantized
-├── exported-model-vX/ # TFLite output dir
-├── model_edgetpu.tflite # Compiled TPU model
+- Trains a MobileNet SSD model to detect cones using custom images.
+- Converts and compiles the model for Coral Edge TPU.
+- Runs live object detection using Raspberry Pi and a USB webcam with Picamera2.
+- Sends control commands to a robot via serial based on object detection.
 
-## 🧪 Quickstart
+---
 
-1. **Setup** (Python 3.9)
+## 🛠️ Environment Setup
+
+### 🖥️ Training (on local PC using WSL + VSCode)
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/yourusername/ccc-coral-cone-detection
+   cd ccc-coral-cone-detection
+2. Create a Python 3.9 virtual environment (Coral TPU is not compatible with 3.11):
+
 ```bash
-python3 -m venv tflite-venv
-source tflite-venv/bin/activate
-pip install tflite-model-maker==0.4.3 tensorflow==2.8 pycocotools
-Train
+sudo apt install python3.9 python3.9-venv python3.9-dev
+python3.9 -m venv coral-env
+source coral-env/bin/activate
+```
+3. Install training dependencies:
 
-bash
-Copy
-Edit
+```bash
+pip install -r requirements.txt
+```
+4. Train your model:
+
+```bash
 python3 train.py
-Check Quantization
+```
+Training uses tflite_model_maker and image-label pairs in images/ folder.
 
-bash
-Copy
-Edit
-python3 verify_if_int8.py
-Compile for Coral
+📦 Model Conversion
+After training, convert your model to TensorFlow Lite:
 
-bash
-Copy
-Edit
-edgetpu_compiler exported-model-vX/model.tflite
+```bash
+python3 export_tflite_model.py
+```
+Then compile it for Edge TPU (on a Linux PC or in WSL):
+
+```bash
+edgetpu_compiler model.tflite
+```
+Output: model_edgetpu.tflite
