@@ -38,20 +38,21 @@ python3 train.py
 Training uses tflite_model_maker and image-label pairs in images/ folder.
 📂 Folder Structure
 ```
-├── images/                   # Training images and labels
-├── exported-model-v2/        # Exported and compiled TFLite model
-├── TFLite_detection_webcampi.py  # Main detection + robot control script
-├── train.py                  # Training script
-├── export_tflite_model.py    # Model export script
-├── requirements.txt
+├── images/                   # Training images (jpg) and labels (xml)
+├── exported-model-v/         # Exported and compiled TFLite model goes here from train.py, this can all be moved to raspberry 
+   ├── model.tflite           # .tflite model from train.py before compiler
+   ├── labels.txt             # dont forget the labels.txt file  
+├── train.py                  # Training and exports the model .tflite script
+├── verify_if_int8.py         # verify the model is in int8 compabily with coral TFlite 
+
 
 ```
 
 📦 Model Conversion
-After training, convert your model to TensorFlow Lite:
+After training, verify your model is TensorFlow Lite:
 
 ```bash
-python3 export_tflite_model.py
+python3 verify_if_int8.py
 ```
 Then compile it for Edge TPU (on a Linux PC or in WSL):
 
@@ -59,3 +60,5 @@ Then compile it for Edge TPU (on a Linux PC or in WSL):
 edgetpu_compiler model.tflite
 ```
 Output: model_edgetpu.tflite
+move this file to the same folder as your model.tflite
+
