@@ -35,7 +35,7 @@ pip install -r requirements.txt
 ```bash
 python3 train.py
 ```
-Training uses tflite_model_maker and image-label pairs in images/ folder.
+Training uses tflite_model_maker and image-label pairs in images/ folder.<br>
 📂 Folder Structure
 ```
 ├── images/                   # Training images (jpg) and labels (xml)
