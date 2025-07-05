@@ -2,7 +2,7 @@
 
 This project demonstrates how to train, convert, and deploy a custom object detection model (cone detector) on the Google Coral USB Accelerator using TensorFlow Lite and Edge TPU.
 
-## 📦 What This Project Does
+#### 📦 What This Project Does
 
 - Trains a MobileNet SSD model to detect cones using custom images.
 - Converts and compiles the model for Coral Edge TPU.
@@ -11,7 +11,7 @@ This project demonstrates how to train, convert, and deploy a custom object dete
 
 ---
 
-## 🛠️ Environment Setup
+#### 🛠️ Environment Setup
 
 ### 🖥️ Training (on local PC using WSL + VSCode)
 1. Clone the repo:
@@ -36,7 +36,7 @@ pip install -r requirements.txt
 python3 train.py
 ```
 Training uses tflite_model_maker and image-label pairs in images/ folder.<br>
-📂 Folder Structure
+####📂 Folder Structure
 ```
 ├── images/                   # Training images (jpg) and labels (xml)
 ├── exported-model-v/         # Exported and compiled TFLite model goes here from train.py, this can all be moved to raspberry 
@@ -48,7 +48,7 @@ Training uses tflite_model_maker and image-label pairs in images/ folder.<br>
 
 ```
 
-📦 Model Conversion
+####📦 Model Conversion
 After training, verify your model is TensorFlow Lite:
 
 ```bash
