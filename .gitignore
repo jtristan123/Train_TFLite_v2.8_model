@@ -24,3 +24,7 @@ testingstuff/
 *.swp
 *.bak
 *.deb
+*.run
+
+*epochs/
+
