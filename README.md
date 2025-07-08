@@ -94,3 +94,9 @@ TensorFlow Version	2.8.4
 Python Version	3.9.x
 OS	Ubuntu 24.04 LTS (via WSL2)
 
+links used to get it to work
+https://developer.nvidia.com/cuda-11.2.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=WSLUbuntu&target_version=20&target_type=runfilelocal
+https://docs.nvidia.com/cuda/archive/11.2.0/cuda-installation-guide-linux/index.html#download-nvidia-driver-and-cuda-software
+downgrade GCC to 9.x 
+cuDNN 8.1.1 from link need both this and cuda to use gpu with tensorflow 2.8
+
