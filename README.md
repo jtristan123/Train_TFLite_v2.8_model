@@ -15,24 +15,24 @@ This project demonstrates how to train, convert, and deploy a custom object dete
 
 ### 🖥️ Training (on local PC using WSL + VSCode)
 1. Clone the repo:
-   ```bash
+   ```
    git clone https://github.com/yourusername/ccc-coral-cone-detection
    cd ccc-coral-cone-detection
-2. Create a Python 3.9 virtual environment (Coral TPU is not compatible with 3.11):
+2. Create a Python 3.9 virtual environment (Coral TPU compiler is not compatible with 3.11):
 
-```bash
+```
 sudo apt install python3.9 python3.9-venv python3.9-dev
 python3.9 -m venv coral-env
 source coral-env/bin/activate
 ```
 3. Install training dependencies:
 
-```bash
+```
 pip install -r requirements.txt
 ```
 4. Train your model:
 
-```bash
+```
 python3 train.py
 ```
 Training uses tflite_model_maker and image-label pairs in images/ folder.<br>
@@ -51,12 +51,12 @@ Training uses tflite_model_maker and image-label pairs in images/ folder.<br>
 ### 📦 Model Conversion
 After training, verify your model is TensorFlow Lite:
 
-```bash
+```
 python3 verify_if_int8.py
 ```
 Then compile it for Edge TPU (on a Linux PC or in WSL):
 
-```bash
+```
 edgetpu_compiler model.tflite
 ```
 Output: model_edgetpu.tflite
