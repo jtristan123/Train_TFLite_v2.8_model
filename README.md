@@ -86,13 +86,13 @@ GPU acceleration provided nearly 2× performance improvement over the CPU in thi
 
 Despite the GTX 1060 being older, it still significantly boosts training due to TensorFlow’s GPU optimization.
 
-Software specifications
+#### Software specifications
 
-CUDA Version	11.2
-cuDNN Version	8.1.1
-TensorFlow Version	2.8.4
-Python Version	3.9.x
-OS	Ubuntu 24.04 LTS (via WSL2)
+CUDA Version	11.2<br>
+cuDNN Version	8.1.1<br>
+TensorFlow Version	2.8.4<br>
+Python Version	3.9.x<br>
+OS	Ubuntu 24.04 LTS (via WSL2)<br>
 
 links used to get it to work
 https://developer.nvidia.com/cuda-11.2.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=WSLUbuntu&target_version=20&target_type=runfilelocal
