@@ -73,7 +73,7 @@ move this file to the same folder as your model.tflite
 
 #### ⏱️ Training Time Comparison
 Device	Training Duration (100 epochs)
-
+| ----------------- | --------------- |
 |GPU (GTX 1060)     |	490.83 seconds|
 |CPU (Ryzen 7 3700X)|	965.90 seconds|
 
